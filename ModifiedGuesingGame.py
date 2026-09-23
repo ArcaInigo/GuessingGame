@@ -11,7 +11,7 @@ def play_game():
         guessed = False
         score = 100
         print(f"Guess a number between {min} and {max}")
-        while not guessed and attempts < 7:
+        while not guessed and attempts < 7: #Set a limit of 7 attempts
             nmbr = int(input("Enter your guess: "))
             attempts += 1
             score -= 10
@@ -27,14 +27,14 @@ def play_game():
                 print (f"Best score: {best}")
                 
                 guessed = True
-        # ran out of guesses
+        # User ran out of guesses
         if not guessed:
             print(f"Game over! You ran out of attempts. The number was {secret}.\n")
             if score > best:
                 best = score
             print (f"score: {score}")
             print (f"Best score: {best}")
-        #New game
+        # ask user to play New game
         play = input("Play again? (yes/no): ")
         if play != "yes":
             print("Thanks for playing!")
